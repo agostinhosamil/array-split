@@ -1,9 +1,10 @@
 {
-  "name": "arraySplit",
-  "version": "1.0.0",
-  "main": "dist/src/index.js",
+  "name": "array-split-base",
+  "version": "1.0.1",
+  "main": "dist/index.js",
   "license": "MIT",
   "icon": "src/assets/icon.png",
+  "private": false,
   "author": "Agostinho Saml <agostinhosaml832@gmail.com> (http://agostinho.atwebpages.com)",
   "displayName": "Array Split",
   "homepage": "https://github.com/agostinhosamil/array-split#readme",
@@ -22,8 +23,8 @@
     "typescript array split"
   ],
   "bugs": {
-    "url" : "https://github.com/agostinhosamil/array-split/issues",
-    "email" : "agostinhosaml832@gmail.com"
+    "url": "https://github.com/agostinhosamil/array-split/issues",
+    "email": "agostinhosaml832@gmail.com"
   },
   "links": [
     {
