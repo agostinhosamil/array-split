@@ -1,0 +1,24 @@
+name: publish
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  release:
+    name: publish
+    runs_on: ubuntu-latest
+    steps:
+      - name: Checkout The Code
+        uses: actions/checkout@v2.1.1
+      - name: Setup NodeJS
+        uses: actions/setup-node@v1.4.2
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org
+      - name: Publish 2npm
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
