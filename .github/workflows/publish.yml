@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
 jobs:
   release:
     name: publish
@@ -20,7 +19,9 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org
-      - name: publish 2npm
+      - name: update the module version
+        run: npm version minor
+      - name: publish the module to the node package manager
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
