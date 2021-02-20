@@ -46,7 +46,7 @@ jobs:
           npm version minor
           git add package.json
           git commit -m "fix: update module version"
-          git push
+          git push origin main
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
       - name: publish the module to the node package manager #2
