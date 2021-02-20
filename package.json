@@ -1,6 +1,6 @@
 {
   "name": "array-split-base",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "main": "dist/index.js",
   "license": "MIT",
   "icon": "src/assets/icon.png",

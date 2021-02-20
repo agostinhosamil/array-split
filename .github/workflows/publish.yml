@@ -42,7 +42,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: update the module version
-        run: npm version minor
+        run: |
+          npm version minor
+          git add package.json
+          git commit -m "fix: update module version"
+          git push
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
       - name: publish the module to the node package manager #2
