@@ -14,11 +14,26 @@ jobs:
           echo "ACTIONS_ALLOW_UNSECURE_COMMANDS=true" >> $GITHUB_ENV
       - name: Checkout The Code
         uses: actions/checkout@v2.1.1
+
+      - name: Cache node_modules directory
+        id: cache-modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: 12.x-${{ runner.OS }}-build-${{ hashFiles('package.json') }}
+
+      - name: Install Package Dependenciess
+        if: steps.cache-modules.outputs.cache-hit != 'true'
+        run: yarn
+      - name: Build the Package
+        run: yarn build
+        
       - name: Setup NodeJS
         uses: actions/setup-node@v1.4.2
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org
+
       - name: Git Identity
         run: |
           git config --global user.name 'github-actions[bot]'
