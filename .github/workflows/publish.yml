@@ -27,7 +27,7 @@ jobs:
         run: yarn
       - name: Build the Package
         run: yarn build
-        
+
       - name: Setup NodeJS
         uses: actions/setup-node@v1.4.2
         with:
@@ -45,7 +45,7 @@ jobs:
         run: npm version minor
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
-      - name: publish the module to the node package manager
+      - name: publish the module to the node package manager #2
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
